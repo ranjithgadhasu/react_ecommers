@@ -61,8 +61,9 @@
 
 .products .container .productbox .contant {
     display: flex;
-    justify-content: space-between;
+    margin-left: 2rem;
     flex-wrap: wrap;
+    gap: 40px;
 }
 
 .products .container .productbox .contant .box {
@@ -251,4 +252,7 @@ color: #fff;
 .product_detail .container .productbox .detail button:hover {
    background: #0989ff;
 }
+
+
+
 

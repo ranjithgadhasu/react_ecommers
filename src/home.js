@@ -135,31 +135,29 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
     <div className='product'>
       <h2>Top Products</h2>
      <div className='container'>
-      {
-        
-        Homeproduct.map((curElm) =>
-        {
-          return(
-            <>
-            <div className='box' key={curElm.id}>
-              <div className='img_box'>
-                <img src={curElm.Img} alt={curElm.Title}></img>
-                <div className='icon'>
-                  <li onClick={() => addtocart (curElm)}> <AiOutlineShoppingCart /></li>
-                  <li onClick={() => view (curElm)}> <BsEye /></li>
-                  <li> <AiOutlineHeart /></li>
-                </div>
-              </div>
-              <div className='detail'>
-                <p>{curElm.Cat}</p>
-                <h3>{curElm.Title}</h3>
-                <h4>{curElm.Price}</h4>
-              </div>
-            </div>
-            </>
-          )
-        })
-      }
+     {
+  Homeproduct.map((curElm, index) =>
+  {
+    return(
+      <div className='box' key={index}>
+        <div className='img_box'>
+          <img src={curElm.Img} alt={curElm.Title}></img>
+          <div className='icon'>
+            <li onClick={() => addtocart (curElm)}> <AiOutlineShoppingCart /></li>
+            <li onClick={() => view (curElm)}> <BsEye /></li>
+            <li> <AiOutlineHeart /></li>
+          </div>
+        </div>
+        <div className='detail'>
+          <p>{curElm.Cat}</p>
+          <h3>{curElm.Title}</h3>
+          <h4>{curElm.Price}</h4>
+        </div>
+      </div>
+    );
+  })
+}
+
      </div>
     </div>
     <div className='banner'>

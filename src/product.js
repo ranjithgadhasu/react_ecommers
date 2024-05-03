@@ -76,35 +76,31 @@ const Product = ({product, setProduct, detail, view, close, setClose, addtocart}
         </div>
       <div className='productbox'>
        <div className='contant'>
-        {
-          product.map((curElm) => 
-        {
-          return (
-           <>
-          <div className='box' key={curElm.id}>
-           <div className='img_box'>
-            <img src={curElm.Img} alt={curElm.Title}></img>
-           <div className='icon'>
-            {
-              isAuthenticated ? 
-              <li onClick={() => addtocart (curElm)}><AiOutlineShoppingCart /></li>
-              : 
-              <li onClick={() => loginWithRedirect (curElm)}><AiOutlineShoppingCart /></li>
-            }
-            <li onClick={() => view (curElm)}><BsEye /></li>
-            <li><AiOutlineHeart /></li>
-           </div>
-          </div>     
-          <div className='detail'>
-            <p>{curElm.Cat}</p>
-            <h3>{curElm.Title}</h3>
-            <h4>${curElm.Price}</h4>
-          </div>
-          </div>
-        </>
-          )
-         })
-        }
+       {
+  product.map((curElm, index) => (
+    <div className='box' key={curElm.id ? curElm.id : `${curElm.Cat}-${curElm.Title}-${index}`}>
+      <div className='img_box'>
+        <img src={curElm.Img} alt={curElm.Title} />
+        <div className='icon'>
+          {
+            isAuthenticated ?
+              <li onClick={() => addtocart(curElm)}><AiOutlineShoppingCart /></li>
+              :
+              <li onClick={() => loginWithRedirect(curElm)}><AiOutlineShoppingCart /></li>
+          }
+          <li onClick={() => view(curElm)}><BsEye /></li>
+          <li><AiOutlineHeart /></li>
+        </div>
+      </div>
+      <div className='detail'>
+        <p>{curElm.Cat}</p>
+        <h3>{curElm.Title}</h3>
+        <h4>${curElm.Price}</h4>
+      </div>
+    </div>
+  ))
+}
+
        </div>
       </div>
      </div>

@@ -10,7 +10,7 @@ import { CiLogout } from 'react-icons/ci';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Nav = ({searchbtn}) => {
-  const [search, setSearch] = useState()
+  const [search, setSearch] = useState("")
   const { loginWithRedirect, logout,  user, isAuthenticated } = useAuth0();
   return (
     <>

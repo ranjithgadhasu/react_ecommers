@@ -7,14 +7,16 @@ import Productdetail from './productdetail';
 
 
 const App = () => {
+  
   //add to cart
   const [cart, setCart] = useState([])
   //product details
   const [close, setClose] = useState(false)
-  const [detail, setDetail] = useState([])
+  const [detail, setDetail] = useState([]);
+  
   //filter producter
    const [product, setProduct] = useState(Productdetail)
-   const searchbtn = (product) =>
+   const searchbtn = (product)  =>
    {
      const change = Productdetail.filter((x) =>
     {

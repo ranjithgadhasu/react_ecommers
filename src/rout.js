@@ -4,6 +4,7 @@ import Home from './home';
 import Product from './product';
 import Cart from './cart';
 import Contact from './contact';
+import About from './About'
 
 const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCart, addtocart }) => {
   return (
@@ -15,6 +16,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
     
    <Route path='/cart' element={<Cart cart={cart} setCart={setCart} addtocart={addtocart} />}/>
    <Route path='/contact' element={<Contact />} />
+   <Route path='/about' element={<About />} />
     </Routes>
     </>
   );
